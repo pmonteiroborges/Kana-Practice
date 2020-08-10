@@ -1,0 +1,1492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.myrealkana.ui.main.HiraganaSelectionViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/scroll_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.main.HiraganaSelectionFragment">
+
+        <TextView
+            android:id="@+id/choose_header"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/choose_header_string"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <HorizontalScrollView
+            android:id="@+id/scroll_hiragana"
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            app:layout_constraintBottom_toTopOf="@+id/button_select_all"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/choose_header">
+
+            <LinearLayout
+                android:id="@+id/hiragana_holder"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/vowel_column"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/a_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_a_hiragana" />
+
+                    <TextView
+                        android:id="@+id/a_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/a_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/i_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_i_hiragana" />
+
+                    <TextView
+                        android:id="@+id/i_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/i_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/u_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_u_hiragana" />
+
+                    <TextView
+                        android:id="@+id/u_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/u_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/e_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_e_hiragana" />
+
+                    <TextView
+                        android:id="@+id/e_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/e_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/o_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_o_hiragana" />
+
+                    <TextView
+                        android:id="@+id/o_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/o_text_string"
+                        android:textAlignment="center" />
+
+                    <CheckBox
+                        android:id="@+id/check_box_vowel"
+                        android:layout_width="@dimen/width_check_box"
+                        android:layout_height="@dimen/height_check_box"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/primaryTextColor"
+                        android:checked="false" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/k_column"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/ka_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_ka_hiragana" />
+
+                    <TextView
+                        android:id="@+id/ka_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/ka_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/ki_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_ki_hiragana" />
+
+                    <TextView
+                        android:id="@+id/ki_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/ki_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/ku_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_ku_hiragana" />
+
+                    <TextView
+                        android:id="@+id/ku_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/ku_text_string"
+                        android:textAlignment="center"
+                        android:textAllCaps="false" />
+
+                    <ImageView
+                        android:id="@+id/ke_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_ke_hiragana" />
+
+                    <TextView
+                        android:id="@+id/ke_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/ke_text"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/ko_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_ko_hiragana" />
+
+                    <TextView
+                        android:id="@+id/ko_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/ko_text_string" />
+
+                    <CheckBox
+                        android:id="@+id/check_box_k"
+                        android:layout_width="@dimen/width_check_box"
+                        android:layout_height="@dimen/height_check_box"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/primaryTextColor" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/s_column"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/sa_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_sa_hiragana" />
+
+                    <TextView
+                        android:id="@+id/sa_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/sa_text_string" />
+
+                    <ImageView
+                        android:id="@+id/shi_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_shi_hiragana" />
+
+                    <TextView
+                        android:id="@+id/shi_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/shi_text_string" />
+
+                    <ImageView
+                        android:id="@+id/su_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_su_hiragana" />
+
+                    <TextView
+                        android:id="@+id/su_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/su_text_string" />
+
+                    <ImageView
+                        android:id="@+id/se_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_se_hiragana" />
+
+                    <TextView
+                        android:id="@+id/se_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/se_text_string" />
+
+                    <ImageView
+                        android:id="@+id/so_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_so_hiragana" />
+
+                    <TextView
+                        android:id="@+id/so_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/so_text_string" />
+
+                    <CheckBox
+                        android:id="@+id/check_box_s"
+                        android:layout_width="@dimen/width_check_box"
+                        android:layout_height="@dimen/height_check_box"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/primaryTextColor" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/t_column"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/ta_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_ta_hiragana" />
+
+                    <TextView
+                        android:id="@+id/ta_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/ta_text_string" />
+
+                    <ImageView
+                        android:id="@+id/chi_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_chi_hiragana" />
+
+                    <TextView
+                        android:id="@+id/chi_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/chi_text_string" />
+
+                    <ImageView
+                        android:id="@+id/tsu_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_tsu_hiragana" />
+
+                    <TextView
+                        android:id="@+id/tsu_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/tsu_text_string" />
+
+                    <ImageView
+                        android:id="@+id/te_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_te_hiragana" />
+
+                    <TextView
+                        android:id="@+id/te_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/te_text_string" />
+
+                    <ImageView
+                        android:id="@+id/to_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_to_hiragana" />
+
+                    <TextView
+                        android:id="@+id/to_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/to_text_string" />
+
+                    <CheckBox
+                        android:id="@+id/check_box_t"
+                        android:layout_width="@dimen/width_check_box"
+                        android:layout_height="@dimen/height_check_box"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/primaryTextColor" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/n_column"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/na_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_na_hiragana" />
+
+                    <TextView
+                        android:id="@+id/na_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/na_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/ni_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_ni_hiragana" />
+
+                    <TextView
+                        android:id="@+id/ni_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/ni_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/nu_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_nu_hiragana" />
+
+                    <TextView
+                        android:id="@+id/nu_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/nu_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/ne_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_ne_hiragana" />
+
+                    <TextView
+                        android:id="@+id/ne_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/ne_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/no_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_no_hiragana" />
+
+                    <TextView
+                        android:id="@+id/no_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/no_text_string"
+                        android:textAlignment="center" />
+
+                    <CheckBox
+                        android:id="@+id/check_box_n"
+                        android:layout_width="@dimen/width_check_box"
+                        android:layout_height="@dimen/height_check_box"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/primaryTextColor"
+                        android:checked="false" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/h_column"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/ha_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_ha_hiragana" />
+
+                    <TextView
+                        android:id="@+id/ha_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/ha_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/hi_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_hi_hiragana" />
+
+                    <TextView
+                        android:id="@+id/hi_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/hi_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/fu_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_fu_hiragana" />
+
+                    <TextView
+                        android:id="@+id/fu_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/fu_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/he_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_he_hiragana" />
+
+                    <TextView
+                        android:id="@+id/he_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/he_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/ho_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_ho_hiragana" />
+
+                    <TextView
+                        android:id="@+id/ho_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/ho_text_string"
+                        android:textAlignment="center" />
+
+                    <CheckBox
+                        android:id="@+id/check_box_h"
+                        android:layout_width="@dimen/width_check_box"
+                        android:layout_height="@dimen/height_check_box"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/primaryTextColor"
+                        android:checked="false" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/m_column"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/ma_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_ma_hiragana" />
+
+                    <TextView
+                        android:id="@+id/ma_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/ma_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/mi_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_mi_hiragana" />
+
+                    <TextView
+                        android:id="@+id/mi_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/mi_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/mu_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_mu_hiragana" />
+
+                    <TextView
+                        android:id="@+id/mu_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/mu_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/me_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_me_hiragana" />
+
+                    <TextView
+                        android:id="@+id/me_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/me_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/mo_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_mo_hiragana" />
+
+                    <TextView
+                        android:id="@+id/mo_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/mo_text_string"
+                        android:textAlignment="center" />
+
+                    <CheckBox
+                        android:id="@+id/check_box_m"
+                        android:layout_width="@dimen/width_check_box"
+                        android:layout_height="@dimen/height_check_box"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/primaryTextColor"
+                        android:checked="false" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/y_column"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/ya_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_ya_hiragana" />
+
+                    <TextView
+                        android:id="@+id/ya_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/ya_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/yu_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_yu_hiragana" />
+
+                    <TextView
+                        android:id="@+id/yu_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/yu_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/yo_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_yo_hiragana" />
+
+                    <TextView
+                        android:id="@+id/yo_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/yo_text_string"
+                        android:textAlignment="center" />
+
+                    <CheckBox
+                        android:id="@+id/check_box_y"
+                        android:layout_width="@dimen/width_check_box"
+                        android:layout_height="@dimen/height_check_box"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/primaryTextColor"
+                        android:checked="false" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/r_column"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/ra_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_ra_hiragana" />
+
+                    <TextView
+                        android:id="@+id/ra_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/ra_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/ri_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_ri_hiragana" />
+
+                    <TextView
+                        android:id="@+id/ri_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/ri_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/ru_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_ru_hiragana" />
+
+                    <TextView
+                        android:id="@+id/ru_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/ru_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/re_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_re_hiragana" />
+
+                    <TextView
+                        android:id="@+id/re_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/re_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/ro_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_ro_hiragana" />
+
+                    <TextView
+                        android:id="@+id/ro_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/ro_text_string"
+                        android:textAlignment="center" />
+
+                    <CheckBox
+                        android:id="@+id/check_box_r"
+                        android:layout_width="@dimen/width_check_box"
+                        android:layout_height="@dimen/height_check_box"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/primaryTextColor"
+                        android:checked="false" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/w_column"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/wa_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_wa_hiragana" />
+
+                    <TextView
+                        android:id="@+id/wa_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/wa_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/wo_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_wo_hiragana" />
+
+                    <TextView
+                        android:id="@+id/wo_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/wo_text_string"
+                        android:textAlignment="center" />
+
+                    <CheckBox
+                        android:id="@+id/check_box_w"
+                        android:layout_width="@dimen/width_check_box"
+                        android:layout_height="@dimen/height_check_box"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/primaryTextColor"
+                        android:checked="false" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ん_column"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/ん_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_n_hiragana" />
+
+                    <TextView
+                        android:id="@+id/ん_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/ん_text_string"
+                        android:textAlignment="center" />
+
+                    <CheckBox
+                        android:id="@+id/check_box_n_char"
+                        android:layout_width="@dimen/width_check_box"
+                        android:layout_height="@dimen/height_check_box"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/primaryTextColor"
+                        android:checked="false" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/g_column"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/ga_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_ga_hiragana" />
+
+                    <TextView
+                        android:id="@+id/ga_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/ga_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/gi_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_gi_hiragana" />
+
+                    <TextView
+                        android:id="@+id/gi_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/gi_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/gu_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_gu_hiragana" />
+
+                    <TextView
+                        android:id="@+id/gu_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/gu_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/ge_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_ge_hiragana" />
+
+                    <TextView
+                        android:id="@+id/ge_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/ge_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/go_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_go_hiragana" />
+
+                    <TextView
+                        android:id="@+id/go_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/go_text_string"
+                        android:textAlignment="center" />
+
+                    <CheckBox
+                        android:id="@+id/check_box_g"
+                        android:layout_width="@dimen/width_check_box"
+                        android:layout_height="@dimen/height_check_box"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/primaryTextColor"
+                        android:checked="false" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/z_column"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/za_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_za_hiragana" />
+
+                    <TextView
+                        android:id="@+id/za_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/za_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/ji_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_ji_hiragana" />
+
+                    <TextView
+                        android:id="@+id/ji_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/ji_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/zu_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_zu_hiragana" />
+
+                    <TextView
+                        android:id="@+id/zu_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/zu_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/ze_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_ze_hiragana" />
+
+                    <TextView
+                        android:id="@+id/ze_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/ze_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/zo_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_zo_hiragana" />
+
+                    <TextView
+                        android:id="@+id/zo_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/zo_text_string"
+                        android:textAlignment="center" />
+
+                    <CheckBox
+                        android:id="@+id/check_box_z"
+                        android:layout_width="@dimen/width_check_box"
+                        android:layout_height="@dimen/height_check_box"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/primaryTextColor"
+                        android:checked="false" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/d_column"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/da_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_da_hiragana" />
+
+                    <TextView
+                        android:id="@+id/da_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/da_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/dzu_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_dzu_hiragana" />
+
+                    <TextView
+                        android:id="@+id/dzu_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/zu_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/de_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_de_hiragana" />
+
+                    <TextView
+                        android:id="@+id/de_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/de_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/do_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_do_hiragana" />
+
+                    <TextView
+                        android:id="@+id/do_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/do_text_string"
+                        android:textAlignment="center" />
+
+                    <CheckBox
+                        android:id="@+id/check_box_d"
+                        android:layout_width="@dimen/width_check_box"
+                        android:layout_height="@dimen/height_check_box"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/primaryTextColor"
+                        android:checked="false" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/b_column"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/ba_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_ba_hiragana" />
+
+                    <TextView
+                        android:id="@+id/ba_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/ba_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/bi_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_bi_hiragana" />
+
+                    <TextView
+                        android:id="@+id/bi_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/bi_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/bu_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_bu_hiragana" />
+
+                    <TextView
+                        android:id="@+id/bu_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/bu_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/be_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_be_hiragana" />
+
+                    <TextView
+                        android:id="@+id/be_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/be_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/bo_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_bo_hiragana" />
+
+                    <TextView
+                        android:id="@+id/bo_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/bo_text_string"
+                        android:textAlignment="center" />
+
+                    <CheckBox
+                        android:id="@+id/check_box_b"
+                        android:layout_width="@dimen/width_check_box"
+                        android:layout_height="@dimen/height_check_box"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/primaryTextColor"
+                        android:checked="false" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/p_column"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/pa_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_pa_hiragana" />
+
+                    <TextView
+                        android:id="@+id/pa_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/pa_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/pi_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_pi_hiragana" />
+
+                    <TextView
+                        android:id="@+id/pi_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/pi_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/pu_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_pu_hiragana" />
+
+                    <TextView
+                        android:id="@+id/pu_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/pu_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/pe_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_pe_hiragana" />
+
+                    <TextView
+                        android:id="@+id/pe_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/pe_text_string"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/po_hiragana"
+                        android:layout_width="@dimen/width_pic"
+                        android:layout_height="@dimen/height_pic"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_po_hiragana" />
+
+                    <TextView
+                        android:id="@+id/po_text"
+                        style="@style/KanaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/po_text_string"
+                        android:textAlignment="center" />
+
+                    <CheckBox
+                        android:id="@+id/check_box_p"
+                        android:layout_width="@dimen/width_check_box"
+                        android:layout_height="@dimen/height_check_box"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/primaryTextColor"
+                        android:checked="false" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <Button
+            android:id="@+id/button_dummy"
+            style="@style/ButtonStyle"
+            android:layout_marginStart="24dp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/button_select_all" />
+
+        <Button
+            android:id="@+id/button_next"
+            style="@style/ButtonStyle"
+            android:layout_marginEnd="24dp"
+            android:onClick="@{() -> viewModel.onNextButtonClicked()}"
+            android:text="@string/button_next_string"
+            app:layout_constraintBottom_toBottomOf="@+id/button_select_all"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/button_select_all" />
+
+        <Button
+            android:id="@+id/button_select_all"
+            style="@style/ButtonStyle"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="80dp"
+            android:text="@string/button_select_all_string"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_next" />
+
+        <Button
+            android:id="@+id/button_clear_all"
+            style="@style/ButtonStyle"
+            android:text="@string/button_clear_all_string"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/button_select_all"
+            app:layout_constraintEnd_toEndOf="@+id/button_select_all"
+            app:layout_constraintStart_toStartOf="@+id/button_select_all"
+            app:layout_constraintTop_toTopOf="@+id/button_select_all"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

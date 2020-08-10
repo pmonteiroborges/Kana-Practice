@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/hiraganaSelectionFragment">
+
+    <fragment
+        android:id="@+id/studyFragment"
+        android:name="com.example.myrealkana.ui.main.StudyFragment"
+        android:label="study_fragment"
+        tools:layout="@layout/study_fragment">
+        <action
+            android:id="@+id/action_studyFragment_to_scoreFragment"
+            app:destination="@id/scoreFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/studyFragment" />
+        <argument
+            android:name="vowelsChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="kChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="sChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="tChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="nChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="hChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="mChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="yChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="rChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="wChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="んChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="gChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="zChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="dChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="bChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="pChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+
+        <argument
+            android:name="vowelsChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="kChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="sChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="tChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="nChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="hChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="mChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="yChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="rChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="wChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="んChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="gChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="zChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="dChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="bChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="pChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+    </fragment>
+    <fragment
+        android:id="@+id/scoreFragment"
+        android:name="com.example.myrealkana.ui.main.ScoreFragment"
+        android:label="ScoreFragment"
+        tools:layout="@layout/score_fragment">
+        <argument
+            android:name="score"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="total"
+            android:defaultValue="1"
+            app:argType="integer" />
+
+        <argument
+            android:name="vowelsChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="kChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="sChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="tChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="nChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="hChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="mChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="yChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="rChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="wChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="んChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="gChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="zChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="dChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="bChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="pChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+
+        <argument
+            android:name="vowelsChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="kChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="sChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="tChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="nChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="hChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="mChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="yChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="rChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="wChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="んChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="gChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="zChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="dChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="bChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="pChosenKata"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+
+        <action
+            android:id="@+id/action_scoreFragment_to_hiraganaSelectionFragment"
+            app:destination="@id/hiraganaSelectionFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_scoreFragment_to_studyFragment"
+            app:destination="@id/studyFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/hiraganaSelectionFragment"
+        android:name="com.example.myrealkana.ui.main.HiraganaSelectionFragment"
+        android:label="HiraganaSelectionFragment">
+        <action
+            android:id="@+id/action_hiraganaSelectionFragment_to_katakanaSelectionFragment"
+            app:destination="@id/katakanaSelectionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/katakanaSelectionFragment"
+        android:name="com.example.myrealkana.ui.main.KatakanaSelectionFragment"
+        android:label="KatakanaSelectionFragment">
+        <action
+            android:id="@+id/action_katakanaSelectionFragment_to_studyFragment"
+            app:destination="@id/studyFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/katakanaSelectionFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="vowelsChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="kChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="sChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="tChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="nChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="hChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="mChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="yChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="rChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="wChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="んChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="gChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="zChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="dChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="bChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <argument
+            android:name="pChosenHira"
+            app:argType="com.example.myrealkana.ui.main.KanaCharRep" />
+        <action
+            android:id="@+id/action_katakanaSelectionFragment_to_hiraganaSelectionFragment"
+            app:destination="@id/hiraganaSelectionFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpToInclusive="false" />
+    </fragment>
+</navigation>

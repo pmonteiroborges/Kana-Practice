@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.myrealkana.ui.main.ScoreViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/scoreFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.main.ScoreFragment">
+
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/percentage_header"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/percentage_header"
+            app:layout_constraintStart_toStartOf="@+id/percentage_header"
+            app:layout_constraintTop_toBottomOf="@+id/percentage_header" />
+
+        <TextView
+            android:id="@+id/percentage_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="296dp"
+            android:text="@string/percentage_header_string"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_choose_new"
+            style="@style/ButtonStyle.ScoreButtonStyle"
+            android:layout_marginStart="40dp"
+            android:layout_marginBottom="80dp"
+            android:text="@string/button_choose_new_string"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/button_study_again"
+            style="@style/ButtonStyle.ScoreButtonStyle"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="80dp"
+            android:text="@string/button_study_again_string"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

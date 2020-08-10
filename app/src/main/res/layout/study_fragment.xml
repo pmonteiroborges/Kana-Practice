@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.myrealkana.ui.main.StudyViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/study_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primaryColor"
+        tools:context=".ui.main.StudyFragment">
+
+        <ImageView
+            android:id="@+id/display_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/ic_a_hiragana"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/score" />
+
+        <Button
+            android:id="@+id/button_answer"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/primaryDarkColor"
+            android:text="@string/button_answer_string"
+            app:layout_constraintBottom_toBottomOf="@+id/display_image"
+            app:layout_constraintStart_toEndOf="@+id/display_image" />
+
+        <EditText
+            android:id="@+id/input_text"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:text="@string/input_text_string"
+            android:textColor="#000000"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="@+id/display_image"
+            app:layout_constraintTop_toBottomOf="@+id/display_image" />
+
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/score_string"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/score_header"
+            app:layout_constraintHorizontal_bias="0.514"
+            app:layout_constraintStart_toStartOf="@+id/score_header"
+            app:layout_constraintTop_toBottomOf="@+id/score_header" />
+
+        <TextView
+            android:id="@+id/score_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="@string/score_header_string"
+            app:layout_constraintEnd_toEndOf="@+id/display_image"
+            app:layout_constraintHorizontal_bias="0.48"
+            app:layout_constraintStart_toStartOf="@+id/display_image"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/total_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_header_string"
+            app:layout_constraintEnd_toEndOf="@+id/button_answer"
+            app:layout_constraintStart_toStartOf="@+id/button_answer"
+            app:layout_constraintTop_toTopOf="@+id/score_header" />
+
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/total_string"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/total_header"
+            app:layout_constraintStart_toStartOf="@+id/total_header"
+            app:layout_constraintTop_toBottomOf="@+id/total_header" />
+
+        <ImageView
+            android:id="@+id/red_x"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/display_image"
+            app:layout_constraintEnd_toEndOf="@+id/display_image"
+            app:layout_constraintStart_toStartOf="@+id/display_image"
+            app:srcCompat="@drawable/ic_red_x" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

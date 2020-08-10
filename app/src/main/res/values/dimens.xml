@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="height_pic">30dp</dimen>
+    <dimen name="width_pic">75dp</dimen>
+    <dimen name="height_check_box">10dp</dimen>
+    <dimen name="width_check_box">33dp</dimen>
+</resources>
